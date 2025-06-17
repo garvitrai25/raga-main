@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoScan - AI-Powered Trash Detection Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            page-break-after: always;
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 15px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            color: #1e40af;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .header p {
+            font-size: 16px;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section h2 {
+            font-size: 18px;
+            color: #1e40af;
+            margin-bottom: 10px;
+            border-left: 4px solid #2563eb;
+            padding-left: 10px;
+        }
+        
+        .section h3 {
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 8px;
+            margin-top: 12px;
+        }
+        
+        .section p {
+            font-size: 12px;
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+        
+        .team-member {
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border-left: 3px solid #10b981;
+        }
+        
+        .team-member h4 {
+            font-size: 14px;
+            color: #059669;
+            margin-bottom: 4px;
+        }
+        
+        .team-member p {
+            font-size: 11px;
+            color: #4b5563;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .feature-item {
+            background: #f0f9ff;
+            padding: 8px;
+            border-radius: 6px;
+            border-left: 3px solid #0ea5e9;
+        }
+        
+        .feature-item h4 {
+            font-size: 12px;
+            color: #0369a1;
+            margin-bottom: 3px;
+        }
+        
+        .feature-item p {
+            font-size: 10px;
+            color: #475569;
+        }
+        
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 10px;
+        }
+        
+        .tech-table th,
+        .tech-table td {
+            border: 1px solid #d1d5db;
+            padding: 6px 8px;
+            text-align: left;
+        }
+        
+        .tech-table th {
+            background: #f3f4f6;
+            color: #374151;
+            font-weight: bold;
+        }
+        
+        .tech-table tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        .problem-list {
+            background: #fef2f2;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid #ef4444;
+            margin-top: 8px;
+        }
+        
+        .problem-list ul {
+            margin-left: 15px;
+        }
+        
+        .problem-list li {
+            font-size: 11px;
+            color: #7f1d1d;
+            margin-bottom: 4px;
+        }
+        
+        .solution-highlight {
+            background: #f0fdf4;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #22c55e;
+            margin: 15px 0;
+        }
+        
+        .solution-highlight h3 {
+            color: #15803d;
+            margin-bottom: 8px;
+        }
+        
+        .conclusion {
+            background: #fefce8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #eab308;
+            margin-top: 20px;
+        }
+        
+        .conclusion p {
+            color: #713f12;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+            
+            .page:last-child {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="header">
+            <h1>EcoScan</h1>
+            <p>AI-Powered Trash Detection & Environmental Engagement Platform</p>
+        </div>
+        
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <p>EcoScan is a revolutionary web-based platform that transforms cleanup initiatives by combining AI image classification, volunteer recognition, and social storytelling into a unified ecosystem. Our solution addresses the critical gap in current beach cleanup efforts by providing real-time waste classification, community motivation tools, and comprehensive event management capabilities.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Team Members</h2>
+            <div class="team-member">
+                <h4>Pradikshina Sharma</h4>
+                <p>Passionate software developer pursuing Electrical Engineering at SGSITS, Indore. Experienced in full-stack web development and machine learning with expertise in React.js, Python, OpenCV, and responsive UI/UX design. Previous internships at L&T Construction and Brainwave Matrix Solution.</p>
+            </div>
+            <div class="team-member">
+                <h4>Garvit Rai</h4>
+                <p>Final-year Information Technology student at SGSITS, Indore, with strong foundation in software development, AI/ML, and web technologies. Skilled in Python, C++, HTML/CSS, and OpenCV. Notable projects include smart stick for visually impaired and farm machinery rental platform.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Problem Statement</h2>
+            <p>Current beach cleanup efforts face significant limitations that hinder their effectiveness and scalability:</p>
+            <div class="problem-list">
+                <ul>
+                    <li>Manual and inconsistent trash categorization processes</li>
+                    <li>Lack of real-time metrics and volunteer tracking tools</li>
+                    <li>Low public engagement with minimal incentives for continued participation</li>
+                    <li>Absence of integrated systems connecting AI classification, community building, and event coordination</li>
+                </ul>
+            </div>
+            <p>There is a pressing need for a unified digital platform that combines real-time waste classification, community motivation, and event management—leveraging the power of AI and interactive design.</p>
+        </div>
+        
+        <div class="solution-highlight">
+            <h3>🌊 Our Solution: EcoScan Platform</h3>
+            <p>EcoScan transforms cleanup initiatives by fusing AI image classification, volunteer recognition, and social storytelling into a single, powerful ecosystem that builds lasting environmental impact.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>🤖 AI-Based Trash Classification</h4>
+                    <p>Identify and categorize trash (plastic, glass, metal, etc.) via image uploads using TensorFlow/MobileNet</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⚠️ Harmful Zone Detection</h4>
+                    <p>Users tag locations where trash is harmful (e.g., near drains or nesting zones); visualized via maps</p>
+                </div>
+                <div class="feature-item">
+                    <h4>👥 Volunteer Profiles</h4>
+                    <p>Tracks individual contribution (hours, cleanups, types of trash handled)</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⏱️ Time Logs</h4>
+                    <p>Automatic logging of participation hours for certification</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🪪 Auto Certification</h4>
+                    <p>Every 10 days of active participation → downloadable certificate</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📚 Idea Blog</h4>
+                    <p>Community-driven section to share local innovations, stories, or cleanup techniques</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🖼️ Image Gallery & Social Posting</h4>
+                    <p>Volunteers can share before/after images; AI generates auto-posts or summaries</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📍 Trash Map</h4>
+                    <p>Heatmap showing trash-heavy zones, generated through geo-tagged uploads</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📢 Fundraising Module</h4>
+                    <p>NGOs and organizers can run verified crowdfunding campaigns linked to cleanup stats</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📆 Event Management</h4>
+                    <p>Central dashboard of drives near the user's location with sign-up and slot availability</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="section">
+            <h2>Development Stack and Tools</h2>
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Tool / Package Name</th>
+                        <th>Version</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Frontend Framework</td>
+                        <td>React.js</td>
+                        <td>18.2.0</td>
+                    </tr>
+                    <tr>
+                        <td>UI Styling</td>
+                        <td>Tailwind CSS / shadcn/ui</td>
+                        <td>3.4.1 / 0.10.3</td>
+                    </tr>
+                    <tr>
+                        <td>State Management</td>
+                        <td>Redux Toolkit</td>
+                        <td>1.9.5</td>
+                    </tr>
+                    <tr>
+                        <td>Routing</td>
+                        <td>React Router DOM</td>
+                        <td>6.23.0</td>
+                    </tr>
+                    <tr>
+                        <td>Form Handling</td>
+                        <td>React Hook Form</td>
+                        <td>7.49.2</td>
+                    </tr>
+                    <tr>
+                        <td>Backend Framework</td>
+                        <td>Node.js (Express)</td>
+                        <td>20.10.0 / 4.19.2</td>
+                    </tr>
+                    <tr>
+                        <td>Database</td>
+                        <td>MongoDB Atlas</td>
+                        <td>6.0.9</td>
+                    </tr>
+                    <tr>
+                        <td>ORM</td>
+                        <td>Mongoose</td>
+                        <td>7.6.0</td>
+                    </tr>
+                    <tr>
+                        <td>Authentication</td>
+                        <td>Firebase Auth</td>
+                        <td>10.7.1</td>
+                    </tr>
+                    <tr>
+                        <td>File Storage</td>
+                        <td>Firebase Storage / Cloudinary</td>
+                        <td>10.7.1 / v1.39.0</td>
+                    </tr>
+                    <tr>
+                        <td>Computer Vision (AI)</td>
+                        <td>TensorFlow.js / MobileNet</td>
+                        <td>3.21.0 / 2.1.0</td>
+                    </tr>
+                    <tr>
+                        <td>NLP Summary Tool</td>
+                        <td>OpenAI GPT-4 API</td>
+                        <td>June 2024 Model</td>
+                    </tr>
+                    <tr>
+                        <td>Mapping & Geo Tools</td>
+                        <td>Leaflet.js / Google Maps API</td>
+                        <td>1.9.4</td>
+                    </tr>
+                    <tr>
+                        <td>Charts & Analytics</td>
+                        <td>Chart.js</td>
+                        <td>4.4.0</td>
+                    </tr>
+                    <tr>
+                        <td>PWA Integration</td>
+                        <td>Workbox</td>
+                        <td>6.5.4</td>
+                    </tr>
+                    <tr>
+                        <td>Deployment</td>
+                        <td>Vercel</td>
+                        <td>Latest</td>
+                    </tr>
+                    <tr>
+                        <td>OS Environment</td>
+                        <td>Ubuntu LTS / Chrome browser</td>
+                        <td>22.04 / Latest</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>Platform Impact & Innovation</h2>
+            <p>EcoScan doesn't just facilitate cleanup—it builds a movement. By documenting every contribution and creating real-world impact stories through AI-enhanced digital content, the platform transforms individual actions into collective environmental progress.</p>
+            
+            <h3>Key Differentiators:</h3>
+            <p><strong>AI-Powered Intelligence:</strong> Advanced computer vision technology automatically categorizes waste types, providing precise data for environmental analysis and policy development.</p>
+            
+            <p><strong>Community Engagement:</strong> Gamification elements, automatic certifications, and social sharing features create sustained motivation for long-term participation.</p>
+            
+            <p><strong>Data-Driven Insights:</strong> Comprehensive analytics dashboard provides organizers and policymakers with actionable insights for strategic decision-making.</p>
+            
+            <p><strong>Scalable Architecture:</strong> Built with modern web technologies ensuring platform scalability across different regions and cleanup initiatives.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Implementation Strategy</h2>
+            <p>The platform will be developed using a progressive web app (PWA) approach, ensuring accessibility across all devices and offline functionality. The modular architecture allows for phased rollout, starting with core AI classification features and expanding to include community engagement and fundraising capabilities.</p>
+            
+            <p>Integration with existing environmental organizations and government initiatives will be prioritized to maximize impact and ensure widespread adoption. The platform's API-first design enables seamless integration with third-party services and future technological enhancements.</p>
+        </div>
+        
+        <div class="conclusion">
+            <h2>Conclusion</h2>
+            <p>EcoScan represents a paradigm shift in environmental action, blending cutting-edge AI technology with community engagement to create a scalable tool for environmental restoration. By providing users with a platform to act, share, and grow, it builds lasting motivation and generates credible data for organizers and policymakers alike. With impact built into every interaction, EcoScan becomes more than a platform—it becomes a citizen-powered movement to restore our coastlines and communities, creating a sustainable future through technology-driven environmental stewardship.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-print functionality for PDF generation
+        window.onload = function() {
+            setTimeout(function() {
+                if (confirm('Would you like to save this document as a PDF?')) {
+                    window.print();
+                }
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
