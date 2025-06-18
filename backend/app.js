@@ -11,23 +11,24 @@ import userRoutes from "./Routers/userRoutes.js";
 import postRoutes from "./Routers/postRoutes.js";
 
 const app = express();
+const port = process.env.PORT || 10000; // fallback in case PORT is not set
 
-const port = process.env.PORT;
-
+// Connect to MongoDB
 connectDB();
 
+// ✅ Add your own frontend URL here
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
-  'https://zen-zone-raga.vercel.app',
+  'https://raga-main.vercel.app',  // ✅ Your deployed frontend
 ];
 
 app.use(express.json());
-
 app.use(helmet());
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(
   cors({
     origin: allowedOrigins,
@@ -36,18 +37,17 @@ app.use(
   })
 );
 
-
-
-// Routes
+// API Routes
 app.use("/api/v1/sleep", sleepRoutes); 
 app.use("/api/v1/mood", moodRoutes);   
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/post", postRoutes);
 
+// Health Check or root
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
 app.listen(port, () => {
-  console.log(`Server is listening on http://localhost:${port}`);
+  console.log(`✅ Server is running on http://localhost:${port}`);
 });
