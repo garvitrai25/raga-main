@@ -1,4 +1,8 @@
+// src/utils/authProvider.jsx
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../lib/firebase'; // ✅ correct path to firebase.js
 
 const AuthContext = createContext();
 
@@ -7,21 +11,30 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
 
   useEffect(() => {
-    const storedToken = localStorage.getItem('token');
-    if (storedToken) {
-      setToken(storedToken);
-      setUser({ name: 'user' }); 
-    }
+    // Listen to Firebase user state
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (firebaseUser) {
+        const token = await firebaseUser.getIdToken();
+        setUser(firebaseUser);
+        setToken(token);
+        localStorage.setItem('token', token);
+      } else {
+        setUser(null);
+        setToken(null);
+        localStorage.removeItem('token');
+      }
+    });
+
+    return () => unsubscribe(); // Clean up listener on unmount
   }, []);
 
-  const login = (newToken) => {
-    localStorage.setItem('token', newToken); 
-    setToken(newToken);
-    setUser({ name: 'user' }); 
+  const login = (token) => {
+    localStorage.setItem('token', token);
+    setToken(token);
   };
 
   const logout = () => {
-    localStorage.removeItem('token'); 
+    localStorage.removeItem('token');
     setToken(null);
     setUser(null);
   };
